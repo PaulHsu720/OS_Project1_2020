@@ -70,7 +70,11 @@ int process_execute(struct child process)
 				fprintf(stderr, "%s: Time %d Total Execution Time %d\n", process.name, i, process.execute_time);
 #endif
 		}		
-		syscall(334, 0, &this_pid, &start_sec, &start_nsec, &end_sec, &end_nsec);		
+		syscall(334, 0, &this_pid, &start_sec, &start_nsec, &end_sec, &end_nsec);
+#ifdef DEBUG			
+		fprintf(stdout, "%s %d\n", process.name, this_pid);
+#endif			
+
 		exit(0);
 	}
 	

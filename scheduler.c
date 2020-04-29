@@ -98,9 +98,9 @@ int scheduling(struct child *process, int num_process, int policy)
 			fprintf(stderr, "%s end_time %d.\n", process[running].name, n_proc_time);
 #endif
 			waitpid(process[running].pid, NULL, 0);
-#ifdef DEBUG			
-			fprintf(stdout, "%s %d\n", process[running].name, process[running].pid);
-#endif			
+//#ifdef DEBUG			
+//			fprintf(stdout, "%s %d\n", process[running].name, process[running].pid);
+//#endif			
 			running = -1;
 			proc_complete++;
 
